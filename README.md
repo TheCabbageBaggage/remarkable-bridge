@@ -53,17 +53,7 @@ agent, or `psql`, can answer questions about it in milliseconds.
 
 ## How it works
 
-```mermaid
-flowchart LR
-    A["reMarkable Cloud<br/>one-time code, diff"] --> B["raw .rm archive<br/>kept forever"]
-    B --> C["vector PDF<br/>+ 300 dpi PNGs"]
-    C --> D["per-page text<br/>via vision model"]
-    D --> E["Markdown<br/>+ YAML front matter"]
-    E --> F["Nextcloud<br/>chronological WebDAV tree"]
-    D --> G[("Postgres + pgvector<br/>FTS + cosine, fused")]
-    B -.->|re-render whenever OCR improves| C
-    F -.->|read-back assertion| G
-```
+<img src="docs/assets/pipeline.svg" width="840" alt="CLOUD auth and poll → .rm archive kept forever → RENDER to vector PDF and 300 dpi PNGs → OCR text per page → Nextcloud chronological tree and Postgres with pgvector">
 
 Six stages, each one independently re-runnable: **auth & poll → render → OCR → publish → index →
 verify**. The raw ink archive is the load-bearing decision — everything after it can be rebuilt
@@ -71,7 +61,7 @@ without touching the tablet again.
 
 ## Why not just export to PDF?
 
-| | Typical export script | remarkable-bridge |
+| Aspect | Typical export script | remarkable-bridge |
 |---|---|---|
 | Identity | filename (rename ⇒ duplicate) | device document UUID, `UNIQUE` in the schema |
 | Order | whatever `ls` gives you | `YYYY-MM-DD_HHMM_<title>` inside `/<year>/<year-month>/` |
@@ -81,8 +71,8 @@ without touching the tablet again.
 | Re-processing | re-export from the device | re-render from the archived `.rm` files |
 | Ownership | vendor app or a flat folder | Postgres you can `pg_dump`, files you can `rsync` |
 
-<sub>Column one describes the common pattern in the export scripts that circulate for reMarkable —
-not a claim about every tool. If one of them already does all of this, use that one.</sub>
+<sub>The middle column describes the common pattern in the export scripts that circulate for
+reMarkable — not a claim about every tool. If one of them already does all of this, use that one.</sub>
 
 ## What makes it different
 

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 260" width="840" height="260" role="img" aria-label="Pipeline: reMarkable cloud to raw .rm archive to PDF and page images to OCR text, then published to Nextcloud and indexed in Postgres with pgvector">
+  <title>remarkable-bridge pipeline</title>
+  <rect width="840" height="260" fill="#0d1117"/>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#484f58"/>
+    </marker>
+    <marker id="ahd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6e7681"/>
+    </marker>
+  </defs>
+
+  <!-- ===== main row ===== -->
+  <!-- 1 CLOUD -->
+  <g>
+    <rect x="18" y="76" width="140" height="68" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="19" y="83" width="3" height="54" rx="1.5" fill="#e3b341"/>
+    <text x="32" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="0.7" fill="#e6edf3">CLOUD</text>
+    <text x="32" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="10" fill="#8b949e">auth + poll</text>
+  </g>
+  <g stroke="#484f58" stroke-width="1.6" fill="none" marker-end="url(#ah)">
+    <line x1="162" y1="110" x2="179" y2="110"/>
+  </g>
+  <!-- 2 ARCHIVE -->
+  <g>
+    <rect x="184" y="76" width="140" height="68" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="185" y="83" width="3" height="54" rx="1.5" fill="#e3b341" opacity="0.55"/>
+    <text x="198" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="0.7" fill="#e6edf3">.RM ARCHIVE</text>
+    <text x="198" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="10" fill="#8b949e">kept forever</text>
+  </g>
+  <g stroke="#484f58" stroke-width="1.6" fill="none" marker-end="url(#ah)">
+    <line x1="328" y1="110" x2="345" y2="110"/>
+  </g>
+  <!-- 3 RENDER -->
+  <g>
+    <rect x="350" y="76" width="140" height="68" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="351" y="83" width="3" height="54" rx="1.5" fill="#4493f8"/>
+    <text x="364" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="0.7" fill="#e6edf3">RENDER</text>
+    <text x="364" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="10" fill="#8b949e">PDF + 300 dpi PNG</text>
+  </g>
+  <g stroke="#484f58" stroke-width="1.6" fill="none" marker-end="url(#ah)">
+    <line x1="494" y1="110" x2="511" y2="110"/>
+  </g>
+  <!-- 4 OCR -->
+  <g>
+    <rect x="516" y="76" width="140" height="68" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="517" y="83" width="3" height="54" rx="1.5" fill="#3fb950"/>
+    <text x="530" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="0.7" fill="#e6edf3">OCR</text>
+    <text x="530" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="10" fill="#8b949e">text per page</text>
+  </g>
+
+  <!-- fan out to the two sinks -->
+  <g stroke="#484f58" stroke-width="1.6" fill="none">
+    <path d="M656 110 H672 V70 H686" marker-end="url(#ah)"/>
+    <path d="M672 110 V150 H686" marker-end="url(#ah)"/>
+  </g>
+
+  <!-- NEXTCLOUD -->
+  <g>
+    <rect x="690" y="44" width="132" height="52" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="691" y="50" width="3" height="40" rx="1.5" fill="#58a6ff"/>
+    <text x="704" y="66" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="0.6" fill="#e6edf3">NEXTCLOUD</text>
+    <text x="704" y="83" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="9.5" fill="#8b949e">chronological</text>
+  </g>
+  <!-- POSTGRES -->
+  <g>
+    <rect x="690" y="124" width="132" height="52" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="691" y="130" width="3" height="40" rx="1.5" fill="#a371f7"/>
+    <text x="704" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="0.6" fill="#e6edf3">PGVECTOR</text>
+    <text x="704" y="163" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="9.5" fill="#8b949e">FTS + cosine</text>
+  </g>
+
+  <!-- re-render arc: archive -> render -->
+  <g stroke="#6e7681" stroke-width="1.4" fill="none" stroke-dasharray="4 4" marker-end="url(#ahd)">
+    <path d="M254 144 V184 H420 V148"/>
+  </g>
+  <text x="337" y="177" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="9.5" fill="#6e7681">re-render anytime</text>
+
+  <!-- legend -->
+  <text x="18" y="226" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="9.5" fill="#6e7681">stage 6 · verify &#8212; read back from Nextcloud, assert the text is not empty, fail the run loudly</text>
+</svg>
