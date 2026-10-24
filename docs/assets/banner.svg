@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-label="remarkable-bridge: reMarkable notebooks to PDF, page images, text and your own searchable Postgres index">
+  <title>remarkable-bridge</title>
+  <rect width="1280" height="320" rx="0" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="1279" height="319" fill="none" stroke="#30363d"/>
+
+  <!-- wordmark -->
+  <text x="64" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="52" font-weight="700" letter-spacing="-1" fill="#e6edf3">remarkable<tspan fill="#e3b341">-bridge</tspan></text>
+  <text x="66" y="186" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" fill="#8b949e">ink &#8594; PDF &#183; page images &#183; text &#183; an index you own</text>
+  <text x="66" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14" fill="#6e7681">self-hosted &#183; Postgres 16 + pgvector &#183; no SaaS</text>
+
+  <!-- divider -->
+  <line x1="632" y1="88" x2="632" y2="232" stroke="#21262d" stroke-width="1"/>
+
+  <!-- pipeline nodes -->
+  <!-- 1. notebook -->
+  <g transform="translate(660,112)">
+    <rect x="0" y="0" width="76" height="76" rx="14" fill="#161b22" stroke="#30363d"/>
+    <rect x="20" y="16" width="36" height="44" rx="4" fill="none" stroke="#e3b341" stroke-width="2"/>
+    <line x1="27" y1="28" x2="49" y2="28" stroke="#e3b341" stroke-width="2" stroke-linecap="round"/>
+    <line x1="27" y1="36" x2="49" y2="36" stroke="#e3b341" stroke-width="2" stroke-linecap="round"/>
+    <line x1="27" y1="44" x2="41" y2="44" stroke="#e3b341" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- arrow -->
+  <g stroke="#30363d" stroke-width="2" stroke-linecap="round" fill="none">
+    <line x1="748" y1="150" x2="776" y2="150"/>
+    <path d="M770 144 L777 150 L770 156"/>
+  </g>
+  <!-- 2. pdf -->
+  <g transform="translate(790,112)">
+    <rect x="0" y="0" width="76" height="76" rx="14" fill="#161b22" stroke="#30363d"/>
+    <path d="M24 16 h20 l12 12 v32 h-32 z" fill="none" stroke="#4493f8" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M44 16 v12 h12" fill="none" stroke="#4493f8" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="32" y1="40" x2="48" y2="40" stroke="#4493f8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="32" y1="48" x2="48" y2="48" stroke="#4493f8" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- arrow -->
+  <g stroke="#30363d" stroke-width="2" stroke-linecap="round" fill="none">
+    <line x1="878" y1="150" x2="906" y2="150"/>
+    <path d="M900 144 L907 150 L900 156"/>
+  </g>
+  <!-- 3. text -->
+  <g transform="translate(920,112)">
+    <rect x="0" y="0" width="76" height="76" rx="14" fill="#161b22" stroke="#30363d"/>
+    <line x1="20" y1="26" x2="56" y2="26" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="34" x2="48" y2="34" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/>
+    <rect x="18" y="40" width="40" height="7" rx="2" fill="#3fb950" opacity="0.28"/>
+    <line x1="20" y1="50" x2="52" y2="50" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/>
+    <line x1="20" y1="58" x2="40" y2="58" stroke="#3fb950" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- arrow -->
+  <g stroke="#30363d" stroke-width="2" stroke-linecap="round" fill="none">
+    <line x1="1008" y1="150" x2="1036" y2="150"/>
+    <path d="M1030 144 L1037 150 L1030 156"/>
+  </g>
+  <!-- 4. database -->
+  <g transform="translate(1050,112)">
+    <rect x="0" y="0" width="76" height="76" rx="14" fill="#161b22" stroke="#30363d"/>
+    <ellipse cx="38" cy="24" rx="16" ry="6" fill="none" stroke="#a371f7" stroke-width="2"/>
+    <path d="M22 24 v28 c0 3.3 7.2 6 16 6s16-2.7 16-6 V24" fill="none" stroke="#a371f7" stroke-width="2"/>
+    <path d="M22 38 c0 3.3 7.2 6 16 6s16-2.7 16-6" fill="none" stroke="#a371f7" stroke-width="2"/>
+  </g>
+
+  <!-- node labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12" letter-spacing="1.6" fill="#6e7681">
+    <text x="698" y="212" text-anchor="middle">CLOUD .RM</text>
+    <text x="828" y="212" text-anchor="middle">PDF + PNG</text>
+    <text x="958" y="212" text-anchor="middle">TEXT</text>
+    <text x="1088" y="212" text-anchor="middle">PGVECTOR</text>
+  </g>
+</svg>
