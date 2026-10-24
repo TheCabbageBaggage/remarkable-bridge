@@ -136,7 +136,8 @@ Nextcloud as the human-facing surface. The retrieval layer is a schema any tool 
 The database layer is the part that works today. Bring it up and prove the schema to yourself in
 about two minutes.
 
-**Requirements:** Docker with Compose, ~500 MB disk, and `psql` available through the container.
+**Requirements:** Docker with Compose and ~500 MB of disk. No local Postgres — `psql` runs inside
+the container.
 
 ```bash
 git clone https://github.com/TheCabbageBaggage/remarkable-bridge
@@ -191,6 +192,7 @@ spikes/
 docs/
   design.md               full design: stages, data model, risks, decisions, estimates
   assets/banner.svg       this README's header
+  assets/pipeline.svg     the pipeline diagram above
 pipeline/                 the ingest → render → publish → index pipeline (in progress)
 ```
 
