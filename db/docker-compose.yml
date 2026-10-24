@@ -1,0 +1,31 @@
+services:
+  remarkable-db:
+    image: pgvector/pgvector:pg16
+    container_name: remarkable-db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-remarkable}
+      - POSTGRES_USER=${POSTGRES_USER:-remarkable}
+      - POSTGRES_INITDB_ARGS=--data-checksums
+    ports:
+      # loopback only: the DB is never exposed to the LAN or the internet
+      - 127.0.0.1:5433:5432
+    volumes:
+      - remarkable-db-data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-remarkable} -d ${POSTGRES_DB:-remarkable}"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    shm_size: 256mb
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "3"
+
+volumes:
+  remarkable-db-data:
+    name: remarkable-db-data

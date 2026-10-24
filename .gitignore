@@ -1,0 +1,20 @@
+# secrets and local state — never commit
+.env
+.pgpass
+*.pgpass
+secrets/
+state.json
+
+# pipeline working data
+work/
+archive/
+images/
+*.log
+
+# editors / OS
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
